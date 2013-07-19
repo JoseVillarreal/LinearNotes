@@ -4,10 +4,12 @@
 <script src="jquery-1.10.2.min.js"></script>
 <script>
 $( document ).ready( function(){
-$("a").click(function() {
+$("a").click(function(event) {
 	event.preventDefault();
-	$("#pdfEmbed").attr('data', "http://faculty.utpa.edu/qiao/Notes3345/" + $(this).attr('href'));
-	$("#embedded").load("http://faculty.utpa.edu/qiao/Notes3345/" + $(this).attr('href'));
+	document.getElementById("pdfEmbed").setAttribute('data', "http://faculty.utpa.edu/qiao/Notes3345/" + $(this).attr('href') );
+	//$("#pdfEmbed").attr('data', "http://faculty.utpa.edu/qiao/Notes3345/" + $(this).attr('href')+"?"+d.getTime());
+	$('#pdfEmbed').css('display', 'none').height();
+	$('#pdfEmbed').css('display', 'inline-block');
 
 	
 });
